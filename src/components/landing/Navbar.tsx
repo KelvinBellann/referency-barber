@@ -5,8 +5,6 @@ import Link from 'next/link'
 
 const links = [
   { href: '#servicos', label: 'Serviços' },
-  { href: '#barbeiros', label: 'Barbeiros' },
-  { href: '#sobre', label: 'Sobre' },
   { href: '#contato', label: 'Contato' },
 ]
 
@@ -51,15 +49,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
-        <div className="hidden items-center gap-4 md:flex">
-          <Link
-            href="/agendar"
-            className="rounded-lg bg-rb-accent px-6 py-2.5 text-sm font-semibold text-rb-surface transition-all duration-200 hover:bg-rb-surface hover:text-rb-charcoal"
-          >
-            Agendar Agora
-          </Link>
-        </div>
 
         {/* Mobile burger */}
         <button
@@ -88,15 +77,6 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
-            <li className="pt-2">
-              <Link
-                href="/agendar"
-                onClick={() => setMenuOpen(false)}
-                className="block rounded-lg bg-rb-accent px-6 py-3 text-center text-sm font-semibold text-rb-surface"
-              >
-                Agendar Agora
-              </Link>
-            </li>
           </ul>
         </div>
       )}
