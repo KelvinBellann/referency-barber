@@ -1,11 +1,11 @@
 const hours = [
-  { day: 'Segunda', time: '06:00 – 21:00' },
-  { day: 'Terça', time: '06:00 – 21:00' },
-  { day: 'Quarta', time: '06:00 – 21:00' },
-  { day: 'Quinta', time: '06:00 – 21:00' },
-  { day: 'Sexta', time: '06:00 – 21:00' },
-  { day: 'Sábado', time: '06:00 – 21:00' },
-  { day: 'Domingo', time: '06:00 – 21:00' },
+  { day: 'Segunda', time: 'Fechado' },
+  { day: 'Terça', time: '09:00 – 21:30' },
+  { day: 'Quarta', time: '09:00 – 21:30' },
+  { day: 'Quinta', time: '09:00 – 21:30' },
+  { day: 'Sexta', time: '09:00 – 21:30' },
+  { day: 'Sábado', time: '09:00 – 21:30' },
+  { day: 'Domingo', time: 'Fechado' },
 ]
 
 export default function Location() {
