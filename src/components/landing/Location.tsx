@@ -1,10 +1,10 @@
 const hours = [
   { day: 'Segunda', time: 'Fechado' },
-  { day: 'Terça', time: '09:00 – 21:30' },
-  { day: 'Quarta', time: '09:00 – 21:30' },
-  { day: 'Quinta', time: '09:00 – 21:30' },
-  { day: 'Sexta', time: '09:00 – 21:30' },
-  { day: 'Sábado', time: '09:00 – 21:30' },
+  { day: 'Terça', time: '09:00 – 09:30 · 14:30 – 20:30' },
+  { day: 'Quarta', time: '09:00 – 09:30 · 14:30 – 20:30' },
+  { day: 'Quinta', time: '09:00 – 09:30 · 14:30 – 20:30' },
+  { day: 'Sexta', time: '09:00 – 09:30 · 14:30 – 20:30' },
+  { day: 'Sábado', time: '09:00 – 09:30 · 14:30 – 20:30' },
   { day: 'Domingo', time: 'Fechado' },
 ]
 

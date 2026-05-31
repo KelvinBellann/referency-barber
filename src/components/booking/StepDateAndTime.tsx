@@ -11,15 +11,21 @@ const BLOCKED_DAYS = new Set([0, 1])
 
 function generateSlots(): string[] {
   const slots: string[] = []
-  for (let h = 9; h <= 21; h++) {
+
+  // Manhã: 09:00 e 09:30
+  slots.push('09:00', '09:30')
+
+  // Tarde: 14:30 até 20:30 de 30 em 30
+  for (let h = 14; h <= 20; h++) {
     for (const m of [0, 30]) {
-      if (h === 21 && m === 30) continue // last slot is 21:30? actually include it
+      if (h === 14 && m === 0) continue // começa em 14:30
       const hh = h.toString().padStart(2, '0')
       const mm = m.toString().padStart(2, '0')
       slots.push(`${hh}:${mm}`)
     }
   }
-  slots.push('21:30')
+  slots.push('20:30')
+
   return slots
 }
 
@@ -73,7 +79,7 @@ export default function StepDateAndTime({ barberId }: { barberId: string }) {
   return (
     <div>
       <h2 className="mb-2 font-heading text-2xl font-bold text-rb-charcoal">Quando quer vir?</h2>
-      <p className="mb-6 text-rb-secondary">Terças a sábados, 09:00 às 21:30.</p>
+      <p className="mb-6 text-rb-secondary">Terças a sábados · Manhã 09:00–09:30 · Tarde 14:30–20:30</p>
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Calendar */}
