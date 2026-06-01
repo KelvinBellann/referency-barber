@@ -43,15 +43,19 @@ export default function StepDateAndTime({ barberId }: { barberId: string }) {
 
   useEffect(() => {
     if (!date || !serviceId) return
+    let cancelled = false
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoadingSlots(true)
     fetch(`/api/availability?barberId=${barberId}&date=${date}&durationMins=30`)
       .then(r => r.json())
       .then(data => {
+        if (cancelled) return
         const available = new Set<string>(data.slots ?? [])
         const booked = new Set(ALL_SLOTS.filter(s => !available.has(s)))
         setBookedTimes(booked)
       })
-      .finally(() => setLoadingSlots(false))
+      .finally(() => { if (!cancelled) setLoadingSlots(false) })
+    return () => { cancelled = true }
   }, [date, barberId, serviceId])
 
   const toISO = (d: number) => {

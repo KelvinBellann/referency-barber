@@ -106,7 +106,7 @@ export default function Services() {
               </div>
 
               <Link
-                href="/agendar"
+                href={`/agendar?serviceId=${service.id}`}
                 className={`rounded-lg py-2.5 text-center text-sm font-semibold transition-all duration-200 ${
                   service.popular
                     ? 'bg-rb-accent text-rb-surface hover:bg-rb-surface hover:text-rb-charcoal'

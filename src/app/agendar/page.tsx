@@ -4,7 +4,12 @@ import BookingFlow from '@/components/booking/BookingFlow'
 
 export const dynamic = 'force-dynamic'
 
-export default async function AgendarPage() {
+interface Props {
+  searchParams: Promise<{ serviceId?: string }>
+}
+
+export default async function AgendarPage({ searchParams }: Props) {
+  const { serviceId } = await searchParams
   const [{ data: services }, { data: barbers }] = await Promise.all([
     supabase
       .from('Service')
@@ -31,7 +36,7 @@ export default async function AgendarPage() {
           <p className="mt-2 text-rb-secondary">Rápido, fácil e sem complicação.</p>
         </div>
 
-        <BookingFlow services={services ?? []} barberId={barberId} />
+        <BookingFlow services={services ?? []} barberId={barberId} preSelectedServiceId={serviceId} />
       </div>
     </main>
   )
